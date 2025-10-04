@@ -39,19 +39,19 @@ const CartModal = ({ isOpen, onClose, cartItems, clearCart }) => {
                 <span style={{ color: 'white', flex: 1 }}>
                   {item.name}
                 </span>
-                <span style={{ color: 'var(--primary-color)', fontWeight: 'bold' }}>
+                <span style={{ color: 'var(--primary-color)', fontWeight: 'bold', flex: 1  }}>
                   ${item.price}
                 </span>
-              </div>
+                              </div>
             ))}
             
             <div style={{ marginTop: '20px', textAlign: 'center' }}>
               <button 
                 onClick={clearCart}
                 style={{
-                  background: 'var(--primary-color)',
+                  background: 'transparent',
                   color: 'white',
-                  border: 'none',
+                  border: '1px solid white',
                   padding: '10px 20px',
                   borderRadius: '5px',
                   cursor: 'pointer',
@@ -79,16 +79,16 @@ const CartModal = ({ isOpen, onClose, cartItems, clearCart }) => {
                 document={<CarritoPDF cartItems={cartItems} />}
                 fileName="carrito.pdf"
                 style={{
-                  background: 'transparent',
+                  background: 'var(--primary-color)',
                   color: 'white',
-                  border: '1px solid white',
+                  border: 'none',
                   padding: '10px 20px',
                   borderRadius: '5px',
                   cursor: 'pointer',
                   textDecoration: 'none'
                 }}
               >
-                {({ loading }) => loading ? 'Generando...' : 'Descargar PDF'}
+                {({ loading }) => loading ? 'Generando PDF...' : 'Descargar PDF'}
               </PDFDownloadLink>
             </div>
           </div>

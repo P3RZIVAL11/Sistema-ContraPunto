@@ -30,14 +30,14 @@ const CarritoPDF = ({ cartItems }) => {
       <Page style={styles.page}>
       <View style={styles.header}>
         <Image
-          src= "/src/assets/images/logo contra1.jpg"// reemplaza con tu URL o base64
+          src= "/src/assets/images/logo_contra.png"
           style={styles.logo}
         />
         <View style={styles.companyInfo}>
           <Text>Contrapunto Creativos</Text>
-          <Text>Av. Creatividad 123, Puebla, México</Text>
-          <Text>Tel: (222) 123-4567</Text>
-          <Text>Email: contacto@contrapunto.mx</Text>
+          <Text>2 Poniente #229, Col. Centro Tehuacán, Puebla</Text>
+          <Text>Tel: 238 111 1160</Text>
+          <Text>Email: danielcontrapunto@gmail.com</Text>
         </View>
       </View>
         <View style={styles.tableHeader}>
