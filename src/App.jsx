@@ -39,6 +39,7 @@ import Playera_vinil from "./pages/Playera_vinil";
 import Sudadera_vinil from "./pages/Sudadera_vinil";
 import Vinil_metro from "./pages/Vinil_metro";
 import Vinil_microperforado from "./pages/Vinil_microperforado";
+import Viewer from "./pages/viewer";
 
 
 function BannerGif() {
@@ -397,7 +398,15 @@ const router = createBrowserRouter([
       </AppLayout>
     )
   },
-
+  
+  {
+    path: "/viewer",
+    element:(    
+      <AppLayout>
+        <Viewer />
+      </AppLayout>
+  )
+  }
 
 
    

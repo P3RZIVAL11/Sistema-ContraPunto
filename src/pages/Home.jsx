@@ -12,7 +12,7 @@ function BannerGif() {
   
   const handleBannerClick = () => {
     
-    navigate("/servicios");
+    navigate("/viewer");
   };
 
   return (

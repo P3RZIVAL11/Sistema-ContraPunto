@@ -1,0 +1,183 @@
+/* === Botones de modelo === */
+.model-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 4px;
+    font-size: .9rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    min-width: 105px;
+  }
+  
+  .model-button.blue {
+    background-color: #27B0E5;
+    color: white;
+  }
+  
+  .model-button.green {
+    background-color: #a9cf46;
+    color: white;
+  }
+  
+  .model-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* === Contenedor de botones === */
+  .model-button-group {
+    position: absolute;
+    top: 50px;
+    left: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    z-index: 10;
+  }
+  /* === Input de imagen === */
+  .image-upload-container {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 10;
+    background-color: #27B0E5;
+    backdrop-filter: blur(6px);
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+    max-width: 260px;
+  }
+  
+  .image-upload-container label {
+    font-weight: bold;
+    font-size: 0.95rem;
+    color: #333;
+    margin-bottom: 6px;
+    display: block;
+  }
+  
+  .image-upload-container input[type="file"] {
+    font-size: 0.85rem;
+    padding: 6px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: rgb(0, 0, 0);
+  }
+
+  /* === Botones flotantes (superior derecha) === */
+.float-button-group {
+    position: absolute;
+    top: 90px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .float-button {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: #27B0E5;
+    color: white;
+    border: none;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .float-button:hover {
+    background-color: #1a8fc2;
+  }
+
+  .model-button-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .variant-indicator {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    width: 14px;
+    height: 14px;
+    background-color: black;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .model-button-wrapper:hover .variant-indicator {
+    opacity: 1;
+  }
+
+
+.header-img {
+  width: auto; /* ajusta según el tamaño del logo */
+  z-index: 1000;
+  animation: slideUp 0.8s ease-out, pulse 3s infinite;
+}
+
+.logo-container {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* ← centra el logo y los botones en columna */
+  gap: 1px;
+}
+
+
+.header-img img {
+  width: clamp(140px, 20vw, 220px); /* ← se adapta entre 140 y 220px */
+  height: auto;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+  .model-button-group {
+    top: 20px;
+    left: 10px;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .image-upload-container {
+    bottom: 80px;
+    left: 10px;
+    max-width: 200px;
+    padding: 8px;
+  }
+
+  .header-img img {
+    width: 160px;
+  }
+
+  .float-button-group {
+    top: auto;
+    bottom: 20px;
+    right: 20px;
+    flex-direction: row; /* cambia a horizontal */
+    gap: 10px;
+  }
+
+  .float-button {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+}

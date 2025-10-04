@@ -1,4 +1,7 @@
 import React from 'react';
+import { PDFDownloadLink } from '@react-pdf/renderer';
+import CarritoPDF from './CarritoPDF';
+
 
 const CartModal = ({ isOpen, onClose, cartItems, clearCart }) => {
   if (!isOpen) return null;
@@ -29,6 +32,10 @@ const CartModal = ({ isOpen, onClose, cartItems, clearCart }) => {
                 padding: '10px 0',
                 borderBottom: '1px solid rgba(255,255,255,0.1)'
               }}>
+                
+                <span style={{ color: 'white', flex: 1 }}>
+                  {item.quantity}
+                </span>
                 <span style={{ color: 'white', flex: 1 }}>
                   {item.name}
                 </span>
@@ -61,11 +68,28 @@ const CartModal = ({ isOpen, onClose, cartItems, clearCart }) => {
                   border: '1px solid white',
                   padding: '10px 20px',
                   borderRadius: '5px',
-                  cursor: 'pointer'
+                  cursor: 'pointer',
+                  marginRight: '10px'
                 }}
               >
                 Cerrar
               </button>
+
+              <PDFDownloadLink
+                document={<CarritoPDF cartItems={cartItems} />}
+                fileName="carrito.pdf"
+                style={{
+                  background: 'transparent',
+                  color: 'white',
+                  border: '1px solid white',
+                  padding: '10px 20px',
+                  borderRadius: '5px',
+                  cursor: 'pointer',
+                  textDecoration: 'none'
+                }}
+              >
+                {({ loading }) => loading ? 'Generando...' : 'Descargar PDF'}
+              </PDFDownloadLink>
             </div>
           </div>
         )}

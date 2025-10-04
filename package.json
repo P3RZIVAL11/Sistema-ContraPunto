@@ -1,7 +1,7 @@
 {
   "name": "ana",
   "version": "0.1.0",
-    "type": "module",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -9,17 +9,22 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^7.1.0",
+    "@fortawesome/free-solid-svg-icons": "^7.1.0",
+    "@fortawesome/react-fontawesome": "^3.1.0",
+    "@react-pdf/renderer": "^4.3.1",
     "framer-motion": "^11.11.17",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-icons": "^5.5.0",
-    "react-router-dom": "^7.6.3"
+    "react-router-dom": "^7.6.3",
+    "three": "^0.180.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.2.1",
-    "vite": "^6.0.5",
     "eslint": "^9.15.0",
     "eslint-plugin-react-hooks": "^5.1.0",
-    "eslint-plugin-react-refresh": "^0.4.10"
+    "eslint-plugin-react-refresh": "^0.4.10",
+    "vite": "^6.0.5"
   }
 }

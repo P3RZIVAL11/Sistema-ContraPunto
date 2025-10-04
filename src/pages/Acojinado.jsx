@@ -26,7 +26,8 @@ const Acojinado = () => {
       image: 'https://m.media-amazon.com/images/I/51xFSTuYksL._AC_SY879_.jpg',
       category: 'playera'
     };
-    
+    console.log("product:");
+    console.log(product);
     addToCart(product);
     //alert('¡Producto añadido al carrito!');
   };

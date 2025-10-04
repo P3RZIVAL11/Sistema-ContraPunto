@@ -24,7 +24,10 @@ const ProductItem = ({ product }) => {
         <p className="precio">${product.price}</p>
         <button 
           className="agregar-carrito btn-2"
-          onClick={() => addToCart(product)}
+          onClick={() => {
+            const productWithQuantity = { ...product, quantity: 1 };
+            addToCart(productWithQuantity);
+          }}
         >
           Agregar al carrito
         </button>

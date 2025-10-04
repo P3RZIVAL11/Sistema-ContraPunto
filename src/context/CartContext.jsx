@@ -14,8 +14,17 @@ export function CartProvider({ children }) {
   const [cartItems, setCartItems] = useState([])
 
   const addToCart = (item) => {
-    setCartItems(prevItems => [...prevItems, item])
-  }
+    setCartItems(prevItems => {
+      const existing = prevItems.find(i => i.id === item.id);
+      if (existing) {
+        return prevItems.map(i =>
+          i.id === item.id ? { ...i, quantity: i.quantity + item.quantity } : i
+        );
+      }
+      return [...prevItems, item];
+    });
+  };
+  
 
   const removeFromCart = (itemId) => {
     setCartItems(prevItems => prevItems.filter(item => item.id !== itemId))
